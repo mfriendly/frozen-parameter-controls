@@ -1,0 +1,4 @@
+# @package _global_
+rewiring:
+  method: gtr
+  num_edges: 20

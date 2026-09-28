@@ -1,0 +1,13 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  hparams:
+    gnn_kwargs:
+      root_weight: True
+      k: 2
+      add_backward: True
+      activation: 'gelu'
+
+dataset:
+  adj_layout: csr

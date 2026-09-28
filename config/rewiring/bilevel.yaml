@@ -1,0 +1,41 @@
+# @package _global_
+rewiring:
+  method: bilevel
+  # --- Bilevel differentiation method ---
+  # first_order : 1-step inner, detached outer (DARTS-like, fast, default)
+  # unrolled    : K-step inner with full backprop through inner updates
+  # implicit    : Neumann-series approximation of implicit gradient
+  bilevel_method: first_order
+  # --- Diagnostic: identity policy (pass-through, no rewiring) ---
+  policy_identity: false
+  # --- Policy type: joint_rewire | edge_reweight ---
+  policy_type: edge_reweight
+  # --- Policy architecture (shared) ---
+  policy_hidden: 64
+  tau: 0.5
+  # --- JointRewirePolicy-specific ---
+  num_candidates: 50
+  topk_spatial: 20
+  topk_temporal: 20
+  # --- EdgeReweightPolicy-specific ---
+  policy_num_new_edges: 0
+  policy_temperature: 1.0
+  # --- Optimization ---
+  outer_lr: 1e-4
+  inner_steps: 1
+  # --- Outer LR scheduler ---
+  outer_warmup_epochs: 10
+  outer_cosine: false
+  # --- Frozen-phi control: run bilevel loop but never update policy ---
+  freeze_phi: false
+  # --- Inner-loop mini-batch mode: reuse (default, T steps share one batch) | fresh (new batch each step) ---
+  inner_batch_mode: reuse
+  # --- Outer loss source: 'val' (default bilevel) or 'train' (E2E K=10 ablation) ---
+  outer_loss: val
+  # --- Rewiring frequency (outer loop every K global steps, 1=every step) ---
+  rewire_every_k: 1
+  # --- Unrolled-specific ---
+  unroll_steps: 5
+  # --- Implicit-specific ---
+  neumann_steps: 5
+  neumann_alpha: 0.1

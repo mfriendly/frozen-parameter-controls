@@ -1,0 +1,28 @@
+# @package _global_
+
+#### Dataset params ###########################################################
+dataset:
+  name: bay
+  splitting:
+    val_len: 0.1
+    test_len: 0.2
+  connectivity:
+    method: distance
+    threshold: 0.1
+    include_self: False
+  covariates:
+    year: False
+    day: True
+    weekday: True
+    mask: False
+  adj_layout: csr
+
+#### Windowing params #########################################################
+window: 12
+horizon: 12
+stride: 1
+
+scaler:
+  method: Standard
+  axis: graph
+  scale_target: False

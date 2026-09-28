@@ -1,0 +1,46 @@
+defaults:
+  - _self_
+  - logger: null
+  - optimizer: adam
+  - lr_scheduler: cosine
+  - dataset: la
+  - model: mptcn_diff
+  - rewiring: none
+
+hydra:
+  run:
+    dir: logs/${rewiring.method}/${model.name}/${dataset.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: logs/${oc.select:sweep.name,sweep}/${now:%Y-%m-%d-%H-%M-%S}
+    subdir: ${rewiring.method}/${model.name}/${dataset.name}/${hydra.job.num}
+
+tags: ${cat:${default_tags},${run_tags}}
+default_tags:
+  - ${model.name}
+  - ${dataset.name}
+  - ${rewiring.method}
+run_tags: []
+
+workers: 0
+num_threads: 1
+seed: 42
+deterministic: true
+
+# Adjacency for the graph-identity ladder:
+#   canonical (default) — dataset distance kernel, unchanged
+#   identity            — I_N (message passing removed)
+#   random              — degree-sequence-preserving double-edge-swap rewiring
+adjacency: canonical
+
+# AGCRN control: freeze node embeddings at random init (requires_grad=False,
+# excluded from optimizer). Default false: embeddings are trainable.
+freeze_node_emb: false
+
+input_encoding: orthogonal
+
+loss_fn: MAE
+epochs: 200
+patience: 50
+batch_size: 64
+grad_clip_val: 5
+train_batches: 300

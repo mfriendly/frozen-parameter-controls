@@ -1,0 +1,10 @@
+# @package _global_
+model:
+  name: dcrnn
+  hparams:
+    hidden_size: 64
+    kernel_size: 2
+    ff_size: 256
+    n_layers: 2
+    cache_support: false
+    dropout: 0.3

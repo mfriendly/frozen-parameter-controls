@@ -1,0 +1,25 @@
+# @package _global_
+
+#### Model params #############################################################
+model:
+  name: mptcn_diff
+  mode: ${ternary:${eq:${model.hparams.n_layers},1},tts,tas}  # {tts, tas}
+  hparams:
+    hidden_size: 32  # 64, 32
+    n_layers: 1
+    # Use this to tailor the temporal budget for the needed receptive field
+    tcn_layers: ${model.min_tcn_layers}
+    # Use this instead to keep same temporal budget as the T&S counterpart
+    #    tcn_layers: ${prod:${cdiv:${model.min_tcn_layers},${model.hparams.gnn_layers}},${model.hparams.gnn_layers}}
+    gnn_layers: ${oc.select:dataset.spatial_order,1}
+    tcn_kwargs:
+      kernel_size: 3
+      row_normalization: False
+      dilation: 1  # dilation=1 means no dilation
+      dilation_mod: null  # modulo of dilation (None means infinite)
+      exponential_dilation: True
+      activation: "gelu"
+      weight_norm: False
+    gnn_kwargs: ???
+  min_tcn_layers: ${min_conv_layers:${window},${model.hparams.tcn_kwargs},${model.hparams.n_layers}}
+  temporal_rf: ${tcn_rf:${model.hparams.tcn_kwargs},${model.hparams.tcn_layers},${model.hparams.n_layers}}

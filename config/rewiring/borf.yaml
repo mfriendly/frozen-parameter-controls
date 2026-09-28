@@ -1,0 +1,6 @@
+# @package _global_
+rewiring:
+  method: borf
+  loops: 10
+  batch_add: 4
+  batch_remove: 2

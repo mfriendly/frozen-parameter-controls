@@ -1,0 +1,17 @@
+cycler==0.12.1
+einops==0.8.2
+lightning==2.6.1
+matplotlib==3.10.8
+networkx==3.6.1
+numba==0.63.1
+numpy==2.2.6
+omegaconf==2.3.0
+pandas==2.3.3
+POT==0.9.6.post1
+pytorch-lightning==2.6.1
+PyYAML==6.0.3
+scipy==1.13.1
+torch==2.7.0+cu128
+torch-geometric==2.7.0
+torch_sparse==0.6.18+pt27cu128
+torch_spatiotemporal==0.9.5

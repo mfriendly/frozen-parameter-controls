@@ -1,0 +1,8 @@
+# @package _global_
+rewiring:
+  method: sdrf
+  num_iterations: 20
+  curvature: bfc
+  remove_edges: true
+  removal_bound: 0.5
+  tau: 1

@@ -1,0 +1,10 @@
+# @package _global_
+model:
+  hparams:
+    gnn_kwargs:
+      K: 3
+      normalization: sym
+      bias: true
+
+dataset:
+  adj_layout: csr

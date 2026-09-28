@@ -1,0 +1,8 @@
+# @package _global_
+defaults:
+  - mptcn
+  - gnn: diffconv
+
+#### Model params #############################################################
+model:
+  name: mptcn_diff

@@ -1,0 +1,5 @@
+# @package _global_
+rewiring:
+  method: fosr
+  num_iterations: 20
+  initial_power_iters: 10

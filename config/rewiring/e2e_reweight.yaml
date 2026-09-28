@@ -1,0 +1,8 @@
+# @package _global_
+rewiring:
+  method: e2e_reweight
+  policy_type: relative_reweight
+  policy_hidden: 64
+  policy_temperature: 1.0
+  policy_num_new_edges: 0
+  disable_reweight: false
