@@ -1,3 +1,9 @@
+# How Much Does Learning the Graph Help? Frozen-Parameter Controls for Spatio-Temporal Traffic Forecasting
+
+Minkyoung Kim, Gun Il Kim, Hyunjung Byun, and Beakcheol Jang, Graduate School of Information, Yonsei University
+
+Code and configuration files for the manuscript above, which is under review. A preliminary version is available as a preprint: [arXiv:2605.07577](https://arxiv.org/abs/2605.07577). Tag `v1.0` marks the code as submitted.
+
 This code builds on the codebase of "Over-squashing in Spatiotemporal Graph Neural Networks" (https://arxiv.org/abs/2506.15507).
 
 ## Environment
@@ -91,4 +97,19 @@ Sum of the logged durations of all runs in the table.
 | End-to-end baseline | 287 |
 | Per-horizon | 1108 |
 
-This code is provided for peer review; a license will accompany the public release.
+## Citation
+
+If you use this code, please cite the preprint:
+
+```bibtex
+@article{kim2026bilevel,
+  title   = {Bilevel Graph Structure Learning, Revisited: Inner-Channel Origins of the Reported Gain},
+  author  = {Kim, Minkyoung and Jang, Beakcheol},
+  journal = {arXiv preprint arXiv:2605.07577},
+  year    = {2026}
+}
+```
+
+## License
+
+A license will be added upon publication of the manuscript. Components adapted from the upstream codebase remain under their original licenses.

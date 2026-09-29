@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the preprint below."
+title: "How Much Does Learning the Graph Help? Frozen-Parameter Controls for Spatio-Temporal Traffic Forecasting"
+authors:
+  - family-names: Kim
+    given-names: Minkyoung
+    affiliation: Yonsei University
+    orcid: "https://orcid.org/0009-0001-3530-0885"
+  - family-names: Kim
+    given-names: Gun Il
+    affiliation: Yonsei University
+    orcid: "https://orcid.org/0009-0005-7126-1245"
+  - family-names: Byun
+    given-names: Hyunjung
+    affiliation: Yonsei University
+    orcid: "https://orcid.org/0009-0004-2003-4889"
+  - family-names: Jang
+    given-names: Beakcheol
+    affiliation: Yonsei University
+    orcid: "https://orcid.org/0000-0002-3911-5935"
+repository-code: "https://github.com/mfriendly/frozen-parameter-controls"
+version: "1.0"
+date-released: "2026-09-28"
+preferred-citation:
+  type: article
+  title: "Bilevel Graph Structure Learning, Revisited: Inner-Channel Origins of the Reported Gain"
+  authors:
+    - family-names: Kim
+      given-names: Minkyoung
+    - family-names: Jang
+      given-names: Beakcheol
+  journal: "arXiv preprint arXiv:2605.07577"
+  year: 2026
+  url: "https://arxiv.org/abs/2605.07577"
